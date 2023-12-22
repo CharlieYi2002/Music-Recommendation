@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom</title>
+	<style>
+		body{
+        background-color:rgba(111, 80, 104, 0.628); 
+        color: white;
+    }
+
+    h1{
+        padding-left: 20px;
+        color: rgb(250, 229, 229);
+        font-size: 5em;
+        font-weight: 200;
+    }
+
+    img{
+        width: 500px;
+        height: auto;
+        float: right;
+    }
+    
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;    
+        border-color: white;
+        
+    }
+
+    th{
+        background-color: black;
+    }
+
+    th, td {
+        padding: 10px;
+    }       
+
+    .tablecss{
+        color: white;
+    }
+    .title{
+        font-size: 2em;
+    }
+	</style>
+</head>
+<body>
+	<h1>Make Your Own Playlist</h1>
+	<form>
+		<label for="artist">Artist Name:</label>
+		<input type="text" id="artist" name="artist"><br><br>
+		<label for="song">Song:</label>
+		<input type="text" id="song" name="song"><br><br>
+		<label for="album">Album:</label>
+		<input type="text" id="album" name="album"><br><br>
+		<label for="release_date">Release Date:</label>
+		<input type="text" id="release_date" name="release_date"><br><br>
+		<input type="button" value="Add to Playlist" onclick="addToTable()">
+	</form>
+	<br>
+	<table>
+		<thead>
+			<tr>
+				<th>Artist Name</th>
+				<th>Song</th>
+				<th>Album</th>
+				<th>Release Date</th>
+			</tr>
+		</thead>
+		<tbody id="music_table_body">
+		</tbody>
+	</table>
+	<script>
+		function addToTable() {
+			var artist = document.getElementById("artist").value;
+			var song = document.getElementById("song").value;
+			var album = document.getElementById("album").value;
+			var release_date = document.getElementById("release_date").value;
+
+			var row = document.createElement("tr");
+
+			var artist_cell = document.createElement("td");
+			var artist_text = document.createTextNode(artist);
+			artist_cell.appendChild(artist_text);
+			row.appendChild(artist_cell);
+
+			var song_cell = document.createElement("td");
+			var song_text = document.createTextNode(song);
+			song_cell.appendChild(song_text);
+			row.appendChild(song_cell);
+
+			var album_cell = document.createElement("td");
+			var album_text = document.createTextNode(album);
+			album_cell.appendChild(album_text);
+			row.appendChild(album_cell);
+
+			var release_date_cell = document.createElement("td");
+			var release_date_text = document.createTextNode(release_date);
+			release_date_cell.appendChild(release_date_text);
+			row.appendChild(release_date_cell);
+
+			document.getElementById("music_table_body").appendChild(row);
+		}
+	</script>
+</body>
+</html>

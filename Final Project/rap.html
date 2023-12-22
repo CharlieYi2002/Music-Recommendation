@@ -1,0 +1,173 @@
+<?php
+
+  $host = "303.itpwebdev.com";
+  $user = "charliey";
+  $pass = "itp303test";
+  $db = "charliey_music_db_m3";
+
+  // Establish MySQL Connection.
+  $mysqli = new mysqli($host, $user, $pass, $db);
+
+  // Check for any Connection Errors.
+  if ( $mysqli->connect_errno ) {
+    echo $mysqli->connect_error;
+    exit();
+  }
+
+  // Retrieve all genres from the DB.
+  $sql_genre = "SELECT * FROM genres;";
+
+  $results_genre = $mysqli->query( $sql_genre );
+
+  // Check for SQL Errors.
+  if ( !$results_genre ) {
+    echo $mysqli->error;
+    $mysqli->close();
+    exit();
+  }
+
+  // Retrieve all media types from the DB.
+  $sql_media = "SELECT * FROM media_types;";
+
+  $results_media = $mysqli->query( $sql_media );
+
+  // Check for SQL Errors.
+  if ( !$results_media ) {
+    echo $mysqli->error;
+    $mysqli->close();
+    exit();
+  }
+
+  // Close MySQL Connection.
+  $mysqli->close();
+
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rap</title>
+  <style>
+
+    body{
+        background-color:rgb(57, 57, 57); 
+    }
+
+    h1{
+        padding-left: 20px;
+        color: rgb(250, 229, 229);
+        font-size: 5em;
+        font-weight: 200;
+    }
+
+    img{
+        width: 500px;
+        height: auto;
+        float: right;
+    }
+    
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;    
+        border-color: white;
+        
+    }
+
+    th{
+        background-color: black;
+    }
+
+    th, td {
+        padding: 10px;
+    }       
+
+    .tablecss{
+        color: white;
+    }
+    .title{
+        font-size: 2em;
+    }
+
+    .left{
+        float: left;
+        flex-wrap: wrap;
+    }
+    .right{
+        padding-top: 200px;
+        padding-left: 100px;
+        float: left;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    
+
+  </style>
+</head>
+<body>
+
+  <div class="left">
+      <h1>Rap</h1>
+
+      <table class="tablecss">
+          <thead>
+            <tr class="title">
+              <th>Artist</th>
+              <th>Song</th>
+              <th>Album</th>
+              <th>Release Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Travis Scott</td>
+              <td>THE SCOTTS</td>
+              <td>THE SCOTTS</td>
+              <td>2020</td>
+            </tr>
+            <tr>
+              <td>Drake</td>
+              <td>Portland</td>
+              <td>More Life</td>
+              <td>2017</td>
+            </tr>
+            <tr>
+              <td>J. Cole</td>
+              <td>Crooked Smile</td>
+              <td>Born Sinner</td>
+              <td>2013</td>
+            </tr>
+            <tr>
+              <td>21 Savage</td>
+              <td>Many Men</td>
+              <td>Savage Mode II</td>
+              <td>2020</td>
+            </tr>
+            <tr>
+              <td>The Weeknd</td>
+              <td>Die For You</td>
+              <td>Starboy</td>
+              <td>2016</td>
+            </tr>
+            <tr>
+              <td>JID</td>
+              <td>Ambassel</td>
+              <td>Madden NFL 22 Soundtrack</td>
+              <td>2021</td>
+            </tr>
+          </tbody>
+        </table>
+      
+    </div>
+
+    <div class="right">
+      <img src="born_sinner.webp" alt="jazz picture">
+    </div>
+
+
+
+
+</body>
+</html>

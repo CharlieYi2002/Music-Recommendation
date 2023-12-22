@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Split Page</title>
+  <style>
+    /* Set the width of the left and right halves */
+    .left-half, .right-half {
+      width: 50%;
+      height: 100%;
+      float: left;
+    }
+    
+    /* Set the background color of the left half to gray */
+    .left-half {
+      background-color: black;
+    }
+    
+    /* Set the background color of the right half to white */
+    .right-half {
+      background-color: #fff;
+    }
+    
+    /* Center the buttons */
+    .button-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    
+    /* Style the buttons */
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Left half -->
+  <div class="left-half"></div>
+  
+  <!-- Right half -->
+  <div class="right-half">
+    <!-- Button container -->
+    <div class="button-container">
+      <!-- Indie button -->
+      <button class="button" onclick="location.href='indie.html'">Indie</button>
+      
+      <!-- Rap button -->
+      <button class="button" onclick="location.href='rap.html'">Rap</button>
+      
+      <!-- Jazz button -->
+      <button class="button" onclick="location.href='jazz.html'">Jazz</button>
+    </div>
+  </div>
+</body>
+</html>
